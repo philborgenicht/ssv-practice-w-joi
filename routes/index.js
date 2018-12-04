@@ -30,7 +30,7 @@ router.post('/signup', validate(validation.signup), function(req, res, next) {
           errors: [
             {
               messages: [
-                'That email is already registered'
+                'that email is already registered'
               ]
             }]
           })

@@ -41,7 +41,11 @@ document.addEventListener('DOMContentLoaded', function(){
         $('#error-text').empty()
         const errors = result.responseJSON.errors
         errors.forEach(error => {
-          $('#error-text').append(`<h5>${error.messages[0]}</h5>`)
+          const messages = error.messages
+          messages.forEach(message => {
+            const errorText = message.split('"').join('').split('_').join(' ')
+            $('#error-text').append(`<h5>${errorText}.</h5>`)
+          })
         })
       })
   })
