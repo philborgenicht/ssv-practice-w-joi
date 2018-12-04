@@ -47,7 +47,7 @@ router.post('/signup', validate(validation.signup), function(req, res, next) {
 })
 
 router.use(function(err, req, res, next) {
-  res.status(err.status).send(err);
+  res.status(err.status).send(err)
 })
 
 
