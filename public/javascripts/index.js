@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const data = {
       first_name: $('#first_name').val(),
       last_name: $('#last_name').val(),
-      email: $('#email').val(),
+      email: $('#email').val().toLowerCase(),
       password: $('#password').val()
     }
     // Post to /signup route
