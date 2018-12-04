@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
       })
     })
 
-  //Submit form data
+  //Submit form data event listener
   document.querySelector('form').addEventListener('submit', () => {
     event.preventDefault()
     //Create new user object with form inputs
