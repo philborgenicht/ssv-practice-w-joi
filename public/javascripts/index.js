@@ -27,18 +27,22 @@ document.addEventListener('DOMContentLoaded', function(){
     $.post('/signup', data)
       //Successful POST request, append new user data
       .done(result => {
-          $('tbody').append(
-            `<tr>
-            <td>${result.first_name}</td>
-            <td>${result.last_name}</td>
-            <td>${result.email}</td>
-            <td>${result.password}</td>`
-          )
+        $('#error-text').empty()
+        $('tbody').append(
+          `<tr>
+          <td>${result.first_name}</td>
+          <td>${result.last_name}</td>
+          <td>${result.email}</td>
+          <td>${result.password}</td>`
+        )
       })
       //Unsuccessful POST request, append error text
       .fail(result => {
         $('#error-text').empty()
-        $('#error-text').append(`<h5>${result.responseJSON.error}</h5>`)
+        const errors = result.responseJSON.errors
+        errors.forEach(error => {
+          $('#error-text').append(`<h5>${error.messages[0]}</h5>`)
+        })
       })
   })
 
