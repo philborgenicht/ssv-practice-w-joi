@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function(){
     // Post to /signup route
     $.post('/signup', data)
       //Successful POST request, append new user data
-      .done(result => {
+      .done(user => {
           $('tbody').append(
             `<tr>
-            <td>${result.first_name}</td>
-            <td>${result.last_name}</td>
-            <td>${result.email}</td>
-            <td>${result.password}</td>`
+            <td>${user.first_name}</td>
+            <td>${user.last_name}</td>
+            <td>${user.email}</td>
+            <td>${user.password}</td>`
           )
       })
       //Unsuccessful POST request, append error text
