@@ -3,11 +3,17 @@
 # Instructions
 
 `npm install`
+
 `createdb ssv_practice_dev`
+
 `knex migrate:latest`
+
 `knex seed:run`
+
 `nodemon` or `nodemon ./bin/www`
+
 `open localhost:3000 in the browser to view the project and play`
+
 
 1. The project, as is, includes handwritten back-end validation.
 2. This means that this is an appropriate way to handle back-end validation -- that is, using if/else statements and multiple res.status.send commands to send the correct error message for particular cases.
