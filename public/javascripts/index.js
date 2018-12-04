@@ -30,10 +30,11 @@ document.addEventListener('DOMContentLoaded', function(){
         $('#error-text').empty()
         $('tbody').append(
           `<tr>
-          <td>${result.first_name}</td>
-          <td>${result.last_name}</td>
-          <td>${result.email}</td>
-          <td>${result.password}</td>`
+            <td>${result.first_name}</td>
+            <td>${result.last_name}</td>
+            <td>${result.email}</td>
+            <td>${result.password}</td>
+          </tr>`
         )
       })
       //Unsuccessful POST request, append error text
